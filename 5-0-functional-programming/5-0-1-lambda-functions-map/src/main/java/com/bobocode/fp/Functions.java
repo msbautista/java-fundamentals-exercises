@@ -6,7 +6,7 @@ package com.bobocode.fp;
  * <p>
  * TODO: implement a method and verify it by running {@link FunctionsTest}
  * <p>
- * TODO: if you find this exercise valuable and you want to get more like it, <a href="https://www.patreon.com/bobocode"> 
+ * TODO: if you find this exercise valuable and you want to get more like it, <a href="https://www.patreon.com/bobocode">
  *     please support us on Patreon</a>
  *
  * @author Taras Boychuk
@@ -26,9 +26,12 @@ public class Functions {
      * @return an instance of {@link FunctionMap} that contains all listed functions
      */
     public static FunctionMap<Integer, Integer> intFunctionMap() {
-        FunctionMap<Integer, Integer> intFunctionMap = new FunctionMap<>();
-
-        // todo: according to the javadoc add functions using lambda expression
+        FunctionMap<Integer, Integer> intFunctionMap = new FunctionMap<Integer, Integer>();
+        intFunctionMap.addFunction("abs", Math::abs);
+        intFunctionMap.addFunction("sgn", x -> x != 0 ? x / Math.abs(x) : 0);
+        intFunctionMap.addFunction("increment", x -> x += 1);
+        intFunctionMap.addFunction("decrement", x -> x -= 1);
+        intFunctionMap.addFunction("square", x -> x * x);
 
         return intFunctionMap;
     }
